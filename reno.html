@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpetas de Chismes</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; }
+        .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #007bff; color: white; font-size: 24px; font-weight: bold; }
+        .emoji { font-size: 32px; }
+        .container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .folder-list { list-style: none; padding: 0; }
+        .folder { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #ddd; cursor: pointer; font-size: 18px; }
+        .folder:hover { background-color: #f1f1f1; }
+        .folder-icon { margin-right: 15px; font-size: 24px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div>Carpetas de Chismes</div>
+        <div class="emoji">🦌</div> <!-- Cambia este emoji según la página -->
+    </div>
+
+    <div class="container">
+        <ul class="folder-list">
+            <!-- Generamos 20 carpetas numeradas -->
+            <script>
+                for (let i = 1; i <= 20; i++) {
+                    document.write(`<li class="folder"><span class="folder-icon">📂</span> Carpeta ${i}</li>`);
+                }
+            </script>
+        </ul>
+    </div>
+
+</body>
+</html>
