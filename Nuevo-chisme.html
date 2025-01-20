@@ -16,19 +16,14 @@
 
     <div class="container">
         <h1>Envía tu Chisme</h1>
-        <form action="https://formsubmit.co/el/vazipe" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+        <form action="https://formsubmit.co/el/vazipe" method="POST" enctype="multipart/form-data">
             
-            <!-- Título del chisme -->
-            <input type="text" id="titulo" name="titulo" placeholder="Título del Chisme" required>
-            
-            <!-- Texto del chisme -->
-            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu chisme aquí..." rows="5" required></textarea>
-            
-            <!-- Imagen -->
+            <input type="text" name="titulo" placeholder="Título del Chisme" required>
+            <textarea name="mensaje" placeholder="Escribe tu chisme aquí..." rows="5" required></textarea>
+
             <label for="imagen">Sube una imagen (JPG, PNG, GIF - Máx. 2MB):</label>
             <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg, image/gif">
-            
-            <!-- Video -->
+
             <label for="video">Sube un video (MP4, WEBM, AVI - Máx. 10MB):</label>
             <input type="file" id="video" name="video" accept="video/mp4, video/webm, video/avi, video/mov">
 
@@ -36,58 +31,11 @@
             <input type="hidden" name="_captcha" value="false"> 
             <input type="hidden" name="_subject" value="Nuevo Chisme Recibido">
             <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_next" value="https://kira25-sys.github.io/hola123/reno.html"> <!-- Redirige a una página después del envío -->
+            <input type="hidden" name="_next" value="https://kira25-sys.github.io/hola123/reno.html">
 
-            <!-- Botón para enviar -->
             <button type="submit">Enviar Chisme</button>
         </form>
     </div>
-
-    <script>
-        function validarFormulario() {
-            const titulo = document.getElementById("titulo").value.trim();
-            const mensaje = document.getElementById("mensaje").value.trim();
-            const imagen = document.getElementById("imagen").files[0];
-            const video = document.getElementById("video").files[0];
-
-            // Lista de palabras prohibidas
-            const palabrasProhibidas = ["hacker", "script", "<script>", "attack", "spam", "fake"];
-            for (let palabra of palabrasProhibidas) {
-                if (titulo.toLowerCase().includes(palabra) || mensaje.toLowerCase().includes(palabra)) {
-                    alert("Tu chisme contiene palabras no permitidas.");
-                    return false;
-                }
-            }
-
-            // Validar imagen
-            if (imagen) {
-                const extensionesImagenes = ["image/png", "image/jpeg", "image/gif"];
-                if (!extensionesImagenes.includes(imagen.type)) {
-                    alert("Solo se permiten imágenes en formato PNG, JPG o GIF.");
-                    return false;
-                }
-                if (imagen.size > 2 * 1024 * 1024) { // 2MB
-                    alert("La imagen es demasiado grande (máximo 2MB).");
-                    return false;
-                }
-            }
-
-            // Validar video
-            if (video) {
-                const extensionesVideos = ["video/mp4", "video/webm", "video/avi", "video/mov"];
-                if (!extensionesVideos.includes(video.type)) {
-                    alert("Solo se permiten videos en formato MP4, WEBM, AVI o MOV.");
-                    return false;
-                }
-                if (video.size > 10 * 1024 * 1024) { // 10MB
-                    alert("El video es demasiado grande (máximo 10MB).");
-                    return false;
-                }
-            }
-
-            return true;
-        }
-    </script>
 
 </body>
 </html>
