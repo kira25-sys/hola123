@@ -18,12 +18,20 @@
         <h1>Envía tu Chisme</h1>
         <form action="https://formsubmit.co/el/vazipe" method="POST" enctype="multipart/form-data">
             
+            <!-- Título del chisme -->
             <input type="text" name="titulo" placeholder="Título del Chisme" required>
+            
+            <!-- Email obligatorio -->
+            <input type="email" name="email" placeholder="Tu Correo (No será publicado)" required>
+            
+            <!-- Texto del chisme -->
             <textarea name="mensaje" placeholder="Escribe tu chisme aquí..." rows="5" required></textarea>
 
+            <!-- Imagen -->
             <label for="imagen">Sube una imagen (JPG, PNG, GIF - Máx. 2MB):</label>
             <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg, image/gif">
 
+            <!-- Video -->
             <label for="video">Sube un video (MP4, WEBM, AVI - Máx. 10MB):</label>
             <input type="file" id="video" name="video" accept="video/mp4, video/webm, video/avi, video/mov">
 
