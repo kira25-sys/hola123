@@ -8,7 +8,21 @@
         body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f8f9fa; }
         .header { display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #007bff; color: white; font-size: 24px; font-weight: bold; }
         .emoji { font-size: 32px; }
-        .container { max-width: 600px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        .container { max-width: 700px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); display: flex; }
+        .button-container { margin-right: 20px; display: flex; align-items: flex-start; }
+        .new-chisme-button { 
+            background-color: #28a745; 
+            color: white; 
+            border: none; 
+            padding: 12px 20px; 
+            border-radius: 5px; 
+            font-size: 16px; 
+            cursor: pointer; 
+            text-decoration: none;
+            display: inline-block;
+        }
+        .new-chisme-button:hover { background-color: #218838; }
+        .folder-list-container { flex-grow: 1; }
         .folder-list { list-style: none; padding: 0; }
         .folder { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #ddd; cursor: pointer; font-size: 18px; }
         .folder:hover { background-color: #f1f1f1; }
@@ -23,17 +37,25 @@
     </div>
 
     <div class="container">
-        <ul class="folder-list">
-            <script>
-                for (let i = 1; i <= 20; i++) {
-                    document.write(`<li class="folder">
-                        <a href="reno-carpeta${i}.html" style="text-decoration:none; color:black; display:flex; align-items:center;">
-                            <span class="folder-icon">📂</span> Carpeta ${i}
-                        </a>
-                    </li>`);
-                }
-            </script>
-        </ul>
+        <!-- Botón a la izquierda -->
+        <div class="button-container">
+            <a href="nuevo-chisme.html" class="new-chisme-button">➕ Crear Nuevo Chisme</a>
+        </div>
+
+        <!-- Lista de carpetas a la derecha -->
+        <div class="folder-list-container">
+            <ul class="folder-list">
+                <script>
+                    for (let i = 1; i <= 20; i++) {
+                        document.write(`<li class="folder">
+                            <a href="reno-carpeta${i}.html" style="text-decoration:none; color:black; display:flex; align-items:center;">
+                                <span class="folder-icon">📂</span> Carpeta ${i}
+                            </a>
+                        </li>`);
+                    }
+                </script>
+            </ul>
+        </div>
     </div>
 
 </body>
