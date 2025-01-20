@@ -17,20 +17,28 @@
     <div class="container">
         <h1>Envía tu Chisme</h1>
         <form action="https://formsubmit.co/el/vazipe" method="POST" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+            
+            <!-- Título del chisme -->
             <input type="text" id="titulo" name="titulo" placeholder="Título del Chisme" required>
+            
+            <!-- Texto del chisme -->
             <textarea id="mensaje" name="mensaje" placeholder="Escribe tu chisme aquí..." rows="5" required></textarea>
             
+            <!-- Imagen -->
             <label for="imagen">Sube una imagen (JPG, PNG, GIF - Máx. 2MB):</label>
             <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg, image/gif">
-
+            
+            <!-- Video -->
             <label for="video">Sube un video (MP4, WEBM, AVI - Máx. 10MB):</label>
             <input type="file" id="video" name="video" accept="video/mp4, video/webm, video/avi, video/mov">
 
-            <!-- Seguridad extra -->
-            <input type="hidden" name="_captcha" value="true"> <!-- reCAPTCHA para evitar spam -->
-            <input type="hidden" name="_subject" value="Nuevo Chisme Recibido"> <!-- Asunto del correo -->
-            <input type="hidden" name="_next" value="https://tuweb.com/gracias.html"> <!-- Redirección tras envío -->
+            <!-- Protección contra spam -->
+            <input type="hidden" name="_captcha" value="false"> 
+            <input type="hidden" name="_subject" value="Nuevo Chisme Recibido">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="https://tuweb.com/gracias.html"> <!-- Redirige a una página después del envío -->
 
+            <!-- Botón para enviar -->
             <button type="submit">Enviar Chisme</button>
         </form>
     </div>
